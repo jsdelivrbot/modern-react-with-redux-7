@@ -16,11 +16,13 @@ const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <BrowserRouter>
-      <Switch>
-        <Route path="/posts/new" component={NewPost}></Route>
-        <Route path="/posts/:id" component={PostDetail}></Route>
-        <Route path="/"          component={Posts}></Route>
-      </Switch>
+      <div>
+        <Switch>
+          <Route path="/posts/new" component={NewPost}></Route>
+          <Route path="/posts/:id" component={PostDetail}></Route>
+          <Route path="/"          component={Posts}></Route>
+        </Switch>
+      </div>
     </BrowserRouter>
   </Provider>
   , document.querySelector('.container'));
