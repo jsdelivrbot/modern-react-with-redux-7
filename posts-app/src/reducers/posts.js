@@ -1,8 +1,12 @@
-import { FETCH_POST, FETCH_POSTS } from '../actions';
+import { FETCH_POST, FETCH_POSTS, DELETE_POST } from '../actions';
+import omit                                     from '../utils';
 
 export default function(state = {}, action) {
   switch (action.type) {
-    case FETCH_POST: 
+    case DELETE_POST:
+      return omit(state, action.payload);
+      
+    case FETCH_POST:
       return { ...state, [action.payload.data.id]: action.payload.data }
       
     case FETCH_POSTS:
