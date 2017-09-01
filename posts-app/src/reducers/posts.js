@@ -1,5 +1,5 @@
 import { FETCH_POST, FETCH_POSTS, DELETE_POST } from '../actions';
-import omit                                     from '../utils';
+import { omit }                                 from '../utils';
 
 export default function(state = {}, action) {
   switch (action.type) {
